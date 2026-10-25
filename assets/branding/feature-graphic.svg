@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+<rect width="1024" height="500" fill="#294d3a"/>
+<path d="M766 118V382H918V118Z" fill="#3c6047"/>
+<path d="M789 144V364L886 402V183Z" fill="#597354"/>
+<path d="M792 364V144L886 183V402Z" fill="none" stroke="#f3eac4" stroke-width="9" stroke-linejoin="round"/>
+<path d="M758 382V119H918V382" fill="none" stroke="#f3eac4" stroke-width="9" stroke-linecap="round"/>
+<path d="M753 387V114H923V387H913V124H763V387Z" fill="#f3eac4"/>
+<path d="M787 137L891 179V409L787 368Z M797 152L881 187V394L797 360Z" fill="#f3eac4" fill-rule="evenodd"/>
+<circle cx="856" cy="284" r="6" fill="#f3eac4"/>
+<text x="72" y="133" font-family="DejaVu Sans" font-size="16" letter-spacing="4" fill="#cfd9b5">FREELY-GIVEN.ORG</text>
+<text x="67" y="232" font-family="DejaVu Serif" font-size="76" fill="#fffdf4">Bible Door</text>
+<text x="72" y="305" font-family="DejaVu Sans" font-size="28" fill="#e6e9c6">Open a door to Scripture.</text>
+<text x="72" y="379" font-family="DejaVu Sans" font-size="18" fill="#dfe6d9">READ OFFLINE  ·  EXPLORE  ·  COMPARE</text>
+</svg>

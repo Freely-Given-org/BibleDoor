@@ -1,0 +1,52 @@
+name: Build and check Bible Door
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.7'
+          channel: stable
+          cache: true
+      - run: flutter pub get --enforce-lockfile
+      - run: dart format --output=none --set-exit-if-changed lib test tool integration_test
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build appbundle --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bibledoor-unsigned-review-bundle
+          path: build/app/outputs/bundle/release/app-release.aab
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.7'
+          channel: stable
+          cache: true
+      - run: flutter pub get --enforce-lockfile
+      - run: flutter test integration_test/smoke_test.dart -d windows
+      - run: flutter build windows --release
+      - name: Package desktop app and C++ runtime
+        shell: pwsh
+        run: ./tool/package_windows.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bible-door-windows-x64
+          path: build/releases/*-windows-x64.zip
+          if-no-files-found: error
+          retention-days: 30

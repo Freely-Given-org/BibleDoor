@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png binary
+*.ico binary
+*.ttf binary
+# Preserve the published fixture bytes and their Unicode-based index offsets.
+test/fixtures/*.bd.txt -text whitespace=-blank-at-eol
+test/fixtures/*.bd.idx -text
+test/fixtures/*.json -text

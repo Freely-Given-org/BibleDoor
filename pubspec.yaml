@@ -1,0 +1,39 @@
+name: bibledoor
+description: "Open a door to Scripture. An offline Bible reader from Freely-Given.org."
+publish_to: 'none'
+version: 1.0.2+3
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  archive: ^4.0.0
+  crypto: ^3.0.7
+  file_selector: ^1.1.0
+  http: ^1.6.0
+  path_provider: ^2.1.5
+  package_info_plus: ^9.0.1
+  share_plus: 12.0.2
+  url_launcher: ^6.3.3
+
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fonts/OFL.txt
+  fonts:
+    - family: BibleSerif
+      fonts:
+        - asset: assets/fonts/NotoSerif-Regular.ttf
+        - asset: assets/fonts/NotoSerif-Italic.ttf
+          style: italic
+        - asset: assets/fonts/NotoSerif-Bold.ttf
+          weight: 700

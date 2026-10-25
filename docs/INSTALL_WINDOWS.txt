@@ -1,0 +1,20 @@
+Bible Door for Windows (64-bit)
+
+1. Extract the complete ZIP to a folder on your computer.
+2. Open that folder and double-click bibledoor.exe (Bible Door).
+3. Open Library to select a public Bible, enter a Bible Door key, or import a ZIP.
+
+Keep the data folder and every DLL beside the executable. The ZIP includes the
+Visual C++ runtime; no administrator installation is required.
+
+To update, close Bible Door and extract the new complete package into a fresh
+folder. Your downloaded Bibles, bookmarks and preferences are stored separately
+in your Windows user profile. Deleting the application folder does not delete
+that reading data.
+
+This desktop build is not Authenticode-signed. Windows may show an unrecognised
+app notice; check that the ZIP came from Freely-Given.org or its official GitHub
+repository. The Android signing key is not a Windows code-signing certificate.
+
+https://Freely-Given.org/
+https://OET.Bible/

@@ -1,0 +1,19 @@
+Bible Door for Linux (64-bit x86)
+
+Extract the complete archive, open the BibleDoor folder, and run ./bibledoor.
+Keep lib/ and data/ beside the executable. GTK 3 and the system C++ runtime are
+required. This bundle is built for the maintainer's Ubuntu desktop; older Linux
+distributions may require building from source with their own toolchain.
+
+Open Library to select a public Bible, enter a Bible Door key, or import a ZIP.
+Downloaded books work offline. Use a Bible's menu in Library for its details,
+downloads, export, and removal. Find free Bibles links to the Bible Drop Box demos.
+
+To update, close Bible Door and extract the new complete bundle. Your Bibles,
+bookmarks, and preferences are stored separately in your user data directory.
+
+For a user-local application-menu installation from the source repository:
+  python3 tool/install_linux.py
+
+https://Freely-Given.org/
+https://OET.Bible/
