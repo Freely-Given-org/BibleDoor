@@ -73,6 +73,7 @@ void main() {
         client: MockClient((_) async => throw StateError('offline')),
       );
       expect((await reopened.installed()).single.name, 'Test Bible');
+      expect((await reopened.installed()).single.key, 'test-123-456');
       expect((await reopened.book(version, 'TIT')).sections.length, 4);
       expect(calls, callsAfterInstall);
       repo.dispose();
@@ -158,6 +159,11 @@ void main() {
       );
       final exported = await repo.exportPackage(imported);
       final archive = ZipDecoder().decodeBytes(exported);
+      expect(archive.files.every((f) => !f.name.contains('\\')), isTrue);
+      expect(
+        archive.files.any((f) => f.name == 'ByBook.1.BDTXT/TIT.1.bd.txt'),
+        isTrue,
+      );
       expect(archive.files.any((f) => f.name.contains(imported.key)), isFalse);
       final another = await repo.importPackage(exported);
       expect(another.name, imported.name);

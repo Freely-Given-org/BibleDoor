@@ -39,6 +39,7 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get --enforce-lockfile
+      - run: flutter test
       - run: flutter test integration_test/smoke_test.dart -d windows
       - run: flutter build windows --release
       - name: Package desktop app and C++ runtime

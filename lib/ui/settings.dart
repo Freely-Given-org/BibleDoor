@@ -6,7 +6,7 @@ import 'theme.dart';
 
 const privacyText = '''Bible Door is made by Freely-Given.org. It contains no advertising, analytics, account system, or tracking SDKs.
 
-Your downloaded Bible text, keys, reading locations, bookmarks, and preferences stay in this app’s local storage. The files are unencrypted. Android cloud backup is disabled for this app. Removing a Bible removes its local books and bookmarks; uninstalling the app removes all app data.
+Your downloaded Bible text, keys, reading locations, bookmarks, and preferences stay in this app’s local storage. The files are unencrypted. Android cloud backup is disabled for this app. Removing a Bible removes its local books and bookmarks; on Android, uninstalling the app removes all app data. On desktop, reading data is stored separately from the application files.
 
 When you request a Bible or a book, Bible Door connects over HTTPS to Freely-Given.org. The request includes the Bible key and requested filename. Like any web server, that server can receive your IP address and connection information and may keep access logs. Bible Door does not send your bookmarks, search terms, or reading history to the server. Reading downloaded books does not require a connection.
 

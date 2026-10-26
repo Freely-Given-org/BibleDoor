@@ -6,6 +6,7 @@ import 'dart:typed_data';
 import 'package:archive/archive.dart';
 import 'package:crypto/crypto.dart';
 import 'package:http/http.dart' as http;
+import 'package:path/path.dart' as p;
 
 import '../models/bible.dart';
 import 'bible_parser.dart';
@@ -35,7 +36,7 @@ class BibleRepository {
     if (!await bibles.exists()) return;
     await for (final entry in bibles.list(followLinks: false)) {
       if (entry is! Directory) continue;
-      final name = entry.path.split('/').last;
+      final name = p.basename(entry.path);
       if (name.startsWith('.backup-')) {
         final target = directory(name.substring('.backup-'.length));
         if (!await target.exists()) {
@@ -52,10 +53,10 @@ class BibleRepository {
     if (!await folder.exists()) return [];
     final versions = <BibleVersion>[];
     await for (final entry in folder.list(followLinks: false)) {
-      if (entry is! Directory || entry.path.split('/').last.startsWith('.')) {
+      if (entry is! Directory || p.basename(entry.path).startsWith('.')) {
         continue;
       }
-      final key = entry.path.split('/').last;
+      final key = p.basename(entry.path);
       try {
         versions.add(await _metadata(key, entry));
       } on Object {
@@ -502,7 +503,10 @@ class BibleRepository {
       followLinks: false,
     )) {
       if (entry is! File || entry.path.endsWith('.part')) continue;
-      final path = entry.path.substring(folder.path.length + 1);
+      // ZIP names always use '/', including when local paths use Windows '\\'.
+      final path = p.posix.joinAll(
+        p.split(p.relative(entry.path, from: folder.path)),
+      );
       final bytes = await entry.readAsBytes();
       archive.addFile(ArchiveFile(path, bytes.length, bytes));
     }
