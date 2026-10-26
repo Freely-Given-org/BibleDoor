@@ -1,0 +1,4 @@
+6a6a19739b33616bdfb568cb568c1926e89a0fdb69cb8fbe5383cf46069dffae  Bible-Door-1.0.2-android.apk
+7e6766f105afcb1b7d9e357cb4ef0d0675a4c54314f2a9639e122a888bac6f4e  Bible-Door-1.0.2-linux-x64.tar.gz
+0b906323134ed9a29951f0c976d31610478a45fa3646adc97c1bc7cd9e157d4f  Bible-Door-1.0.2-play.aab
+987be71b232e3541e3d062daa99bdfccb650f4e31137753821c4bc544c5a1c09  Bible-Door-1.0.2-windows-x64.zip

@@ -73,6 +73,24 @@ keep them together if moving it manually. This build targets this workstation's
 Ubuntu version and architecture; redistribution to older distributions needs a
 compatible build environment and dependency checks.
 
+Run `python3 tool/package_linux.py` to create a complete Linux archive under
+`build/releases/`. The current workstation runs Ubuntu 26.04 x86-64.
+
+## Windows desktop
+
+The GitHub Actions workflow builds and tests Windows on a Windows runner. Download
+its `bible-door-windows-x64` artifact, extract the ZIP, and run `bibledoor.exe`.
+Keep its DLLs and `data` directory together. The package includes the Visual C++
+runtime and does not require an administrator installation. It is not
+Authenticode-signed. See [Windows instructions](docs/INSTALL_WINDOWS.txt).
+
+On a Windows development machine with Visual Studio C++ tools:
+
+```powershell
+flutter build windows --release
+./tool/package_windows.ps1
+```
+
 ## Android release
 
 ```sh
@@ -111,8 +129,8 @@ flutter test integration_test/smoke_test.dart -d DEVICE_ID
 ```
 
 The app uses the website's green/olive palette with an uncluttered reading surface.
-Preview renders live in `docs/screenshots`; capture device screenshots for the
-final store listing. The icon source is `assets/branding/bibledoor.svg`.
+Preview renders live in `docs/screenshots`; signed-app Android phone captures are
+in `docs/store-screenshots`. The icon source is `assets/branding/bibledoor.svg`.
 
 ## History and licence
 

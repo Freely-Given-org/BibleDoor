@@ -59,8 +59,9 @@ Checked against official documentation on 26 October 2026:
 - For reviewer access, give the public key `webbe-123-456` and explain that the
   Library's World English Bible option downloads it without an account.
 - Use the listing draft, the 512×512 icon, and a 1024×500 feature graphic under
-  `assets/branding`. Capture final screenshots from the signed app on phones and
-  tablets. The widget renders under `docs/screenshots` are layout-review previews.
+  `assets/branding`. Five phone captures from the signed 1.0.2 app are under
+  `docs/store-screenshots`. Capture tablet screenshots if using that listing
+  surface. The widget renders under `docs/screenshots` are layout-review previews.
   [Store asset guidance](https://support.google.com/googleplay/android-developer/answer/9866151)
 - Complete the testing track requirements attached to the developer account.
   New personal accounts may require 12 continuously opted-in testers for 14 days
